@@ -31,9 +31,9 @@ This project will be implemented with the following technologies:
 
 **Day 1 (Monday)**: Setup environment (Android Studio, Java). Initialize project and setup github. Get home page up. Get started with search.
 
-**Day 2 (Wednesday)**: Get API Search to work. Display recipe view. Display show page for individual recipe.
+**Day 3 (Wednesday)**: Get API Search to work. Display recipe view. Display show page for individual recipe.
 
-**Day 3 (Friday)**: Get Instagram API to work and display search results for that view. Display show page for individual.
+**Day 5 (Friday)**: Get Instagram API to work and display search results for that view. Display show page for individual.
 
 
 ### Bonus features

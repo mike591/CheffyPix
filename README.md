@@ -1,4 +1,4 @@
-## InstaFood
+## Cozinha
 
 ### Background
 
@@ -6,7 +6,7 @@ This is an app to connect foodies together. Users can search up recipes, take pi
 
 ### Functionality & MVP  
 
-In InstaFood, you will be able to:
+In Cozinha, you will be able to:
 
 - [ ] Display search bar
 - [ ] Search for recipes

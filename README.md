@@ -16,7 +16,7 @@ In Cozinha, you will be able to:
 
 
 ## Design Docs
-* [View Wireframes][docs/wireframes]
+* [View Wireframes](docs/wireframes)
 
 
 ### Architecture and Technologies

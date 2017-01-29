@@ -48,3 +48,4 @@ If given the time, I would try to implement these features:
 
 - [ ] Create a post.
 - [ ] Keep track of recipes created.
+- [ ] Utilize Facebook Auth API to share recipes

@@ -30,8 +30,7 @@ This project will be implemented with the following technologies:
 The application will include 3 main screens, one with food photos, one 'social' view utilizing instagram API, and a show page which displays information.
 
 ![list](docs/wireframes/wireframe1.png)
-![description](docs/wireframes/wireframe2.png)
-![show-page](docs/wireframes/wireframe2.png)
+![description](docs/wireframes/wireframe3.png)
 
 ### Implementation Timeline
 

@@ -2,7 +2,7 @@
 
 ### Background
 
-This is an app to connect foodies together. Users can search up recipes, take pictures of completed recipes, and share pictures to social media.
+Cozinha is a native mobile app for Android, whose purpose is to connect foodies together and celebrate cooking. Users can search up recipes, take pictures of completed recipes, and share pictures to social media.
 
 ### Functionality & MVP  
 
@@ -11,9 +11,10 @@ In Cozinha, you will be able to:
 - [ ] Display search bar
 - [ ] Search for recipes
 - [ ] Swipe to switch between recipe view and social view
-- [ ] View individual recipe and user post.
-- [ ] A production Readme
+- [ ] View individual recipe and user post
 
+As well, there will be:
+- [ ] A production Readme
 
 ## Design Docs
 * [View Wireframes](docs/wireframes)
@@ -40,11 +41,14 @@ The application will include 3 main screens, one with food photos, one 'social' 
 
 **Day 5 (Friday)**: Get Instagram API to work and display search results for that view. Display show page for individual.
 
+###Group Members & Work Breakdown
+
+Our group consists of three members, Michael Mach, Nicholas Vizzutti, and Kathy Luo.
 
 ### Bonus features
 
 If given the time, I would try to implement these features:
 
-- [ ] Create a post.
-- [ ] Keep track of recipes created.
+- [ ] Create a post
+- [ ] Keep track of recipes created
 - [ ] Utilize Facebook Auth API to share recipes

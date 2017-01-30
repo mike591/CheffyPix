@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cohinza</string>
+    <string name="search_hint">Type a recipe to search!</string>
 </resources>

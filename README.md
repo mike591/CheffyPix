@@ -45,9 +45,30 @@ The application will include 3 main screens, one with food photos, one 'social' 
 
 Our group consists of three members, Michael Mach, Nicholas Vizzutti, and Kathy Luo.
 
+Mike's primary responsibilities will include: 
+-android studio and setup research
+-management of application backbone, delegating tasks appropriately to Nick and Kathy when appropriate
+-creation of search bar fragment and homepage containing logo and search bar, and necessary navigation items
+-researching app publication
+-contributing to app publication and user acquisition
+
+Nick's primary responsibilities will include:
+-Instagram API research
+-management of Instagram API integration, delegating tasks appropriately to Mike and Kathy when appropriate
+-creation of social view fragments, including index and item show pages
+-researching app marketing and user acquisition
+-contributing to app publication and user acquisition
+
+Kathy's primary responsibilities will include:
+-Food2Fork API research
+-management of Food2Fork API integration, delegating tasks appropriately to Mike and Nick when appropriate
+-creation of recipe view fragments, including index and item show pages
+-writing production readme and creating visuals showcasing the app's functionality
+-contributing to app publication and user acquisition
+
 ### Bonus features
 
-If given the time, I would try to implement these features:
+If given the time, we will implement these features, allowing users to:
 
 - [ ] Create a post
 - [ ] Keep track of recipes created

@@ -37,9 +37,9 @@ The application will include 3 main screens, one with food photos, one 'social' 
 
 **Day 1 (Monday)**: Setup environment (Android Studio, Java). Initialize project and setup github. Get home page up. Get started with search.
 
-**Day 3 (Wednesday)**: Get API Search to work. Display recipe view. Display show page for individual recipe.
+**Day 3 (Wednesday)**: Get Food2Fork API Search to work. Display recipe view. Get Instagram API to work and display search results for that view.
 
-**Day 5 (Friday)**: Get Instagram API to work and display search results for that view. Display show page for individual.
+**Day 5 (Friday)**: Display show page for individual recipe. Display show page for individual. Create production readme, publish, and market app.
 
 ###Group Members & Work Breakdown
 

@@ -1,6 +1,7 @@
 package kathy.nick.mike.cohinza;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,11 +17,15 @@ import java.util.List;
 
 public class RecipeListActivity extends AppCompatActivity {
     private ArrayList<RecipeListItem> mRecipeListItems;
+    private String query;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_list);
+
+        Intent intent = getIntent();
+        query = intent.getStringExtra(MainActivity.QUERY_KEY);
 
         ListView mRecipeListView = (ListView) findViewById(R.id.activity_recipe_list);
 

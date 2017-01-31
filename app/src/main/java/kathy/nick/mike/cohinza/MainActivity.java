@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private Button mButton;
-    private static final String QUERY_KEY = "QUERY_KEY";
+    public static final String QUERY_KEY = "QUERY_KEY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

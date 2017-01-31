@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RecipeDetailActivity.class);
+                Intent intent = new Intent(MainActivity.this, RecipeListActivity.class);
                 EditText mEditText = (EditText) findViewById(R.id.home_page_search);
                 String message = mEditText.getText().toString();
                 intent.putExtra(QUERY_KEY, message);

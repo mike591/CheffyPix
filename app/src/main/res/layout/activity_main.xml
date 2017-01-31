@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context="kathy.nick.mike.cohinza.MainActivity">
+    tools:context="kathy.nick.mike.cohinza.MainActivity"
+    android:background="@color/purple"
+    android:layout_gravity="center">
 
     <EditText
         android:id="@+id/search"
@@ -14,12 +16,19 @@
         android:layout_height="wrap_content"
         android:hint="@string/search_hint"
         android:inputType="text"
-        android:imeOptions="actionSend" />
+        android:layout_centerInParent="true"
+        android:imeOptions="actionSend"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_editbox"/>
 
     <Button
         android:id="@+id/button"
+        android:layout_below="@id/search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:text="@string/search_button"
+        android:background="@color/purple"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"/>
 
-</LinearLayout>
+</RelativeLayout>

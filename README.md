@@ -10,8 +10,8 @@ In Cozinha, you will be able to:
 
 - [ ] Display search bar
 - [ ] Search for recipes
-- [ ] Swipe to switch between recipe view and social view
-- [ ] View individual recipe and user post
+- [ ] switch between recipe view and social sharing view
+- [ ] View individual recipe and new user post
 
 As well, there will be:
 - [ ] A production Readme
@@ -26,9 +26,9 @@ This project will be implemented with the following technologies:
 
 - Android/Java
 - Android Studio
-- Some food/recipe API and Instagram API
+- Food2Fork recipe API
 
-The application will include 3 main screens, one with food photos, one 'social' view utilizing instagram API, and a show page which displays information.
+The application will include 3 main screens, one with food photos utilizing the Food2Fork API, one for the homepage with search, and a show page which displays information.
 
 ![list](docs/wireframes/wireframe1.png)
 ![description](docs/wireframes/wireframe3.png)
@@ -53,9 +53,9 @@ Mike's primary responsibilities will include:
 - contributing to app publication and user acquisition
 
 Nick's primary responsibilities will include:
-- Instagram API research
-- management of Instagram API integration, delegating tasks to Mike and Kathy when appropriate
-- creation of social view fragments, including index and item show pages
+- research on share post functionality using user's native apps
+- management of post sharing, delegating tasks to Mike and Kathy when appropriate
+- creation of social post view
 - researching app marketing and user acquisition
 - contributing to app publication and user acquisition
 

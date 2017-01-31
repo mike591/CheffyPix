@@ -11,7 +11,7 @@
     android:layout_gravity="center">
 
     <EditText
-        android:id="@+id/search"
+        android:id="@+id/home_page_search"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/search_hint"
@@ -22,8 +22,8 @@
         android:background="@drawable/rounded_editbox"/>
 
     <Button
-        android:id="@+id/button"
-        android:layout_below="@id/search"
+        android:id="@+id/home_page_search_button"
+        android:layout_below="@id/home_page_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/search_button"

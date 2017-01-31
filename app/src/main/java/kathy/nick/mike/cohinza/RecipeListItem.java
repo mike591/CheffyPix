@@ -5,7 +5,7 @@ import java.util.Queue;
  * Created by michael on 1/31/17.
  */
 
-public class Recipe {
+public class RecipeListItem {
     private String mTitle;
     private String mImageUrl;
     private int mRecipeId;
@@ -34,7 +34,7 @@ public class Recipe {
         mRecipeId = recipeId;
     }
 
-    public Recipe(int recipeId, String title, String imageUrl) {
+    public RecipeListItem(int recipeId, String title, String imageUrl) {
         mTitle = title;
         mImageUrl = imageUrl;
         mRecipeId = recipeId;

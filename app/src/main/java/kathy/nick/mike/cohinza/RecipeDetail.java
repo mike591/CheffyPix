@@ -7,14 +7,14 @@ import java.util.ArrayList;
  * Created by njvizzutti on 1/31/17.
  */
 
-public class RecipeItem {
+public class RecipeDetail {
     private String mTitle;
     private String mImageUrl;
     private int mRecipeId;
     private int mSocialRank;
     private ArrayList mIngredients;
 
-    public RecipeItem(String title, String imageUrl, int socialRank, int recipeId, ArrayList ingredients) {
+    public RecipeDetail(String title, String imageUrl, int socialRank, int recipeId, ArrayList ingredients) {
         mTitle = title;
         mImageUrl = imageUrl;
         mRecipeId = recipeId;

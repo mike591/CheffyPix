@@ -1,6 +1,4 @@
 package kathy.nick.mike.cohinza;
-
-import java.util.ArrayList;
 import java.util.Queue;
 
 /**
@@ -10,7 +8,6 @@ import java.util.Queue;
 public class Recipe {
     private String mTitle;
     private String mImageUrl;
-    private ArrayList mIngredientList = new ArrayList();
     private int mRecipeId;
 
     public String getTitle() {
@@ -29,14 +26,6 @@ public class Recipe {
         mImageUrl = imageUrl;
     }
 
-    public ArrayList getIngredientList() {
-        return mIngredientList;
-    }
-
-    public void setIngredientList(ArrayList ingredientList) {
-        mIngredientList = ingredientList;
-    }
-
     public int getRecipeId() {
         return mRecipeId;
     }
@@ -45,11 +34,10 @@ public class Recipe {
         mRecipeId = recipeId;
     }
 
-    public Recipe(int recipeId, String title, String imageUrl, ArrayList ingredientList) {
+    public Recipe(int recipeId, String title, String imageUrl) {
         mTitle = title;
         mImageUrl = imageUrl;
         mRecipeId = recipeId;
-        mIngredientList = ingredientList;
     }
 
 }

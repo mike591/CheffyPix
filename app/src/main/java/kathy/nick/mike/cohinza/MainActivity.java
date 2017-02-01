@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mButton = (Button) findViewById(R.id.home_page_search_button);
+        mButton.setBackgroundResource(R.drawable.home_button);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

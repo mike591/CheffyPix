@@ -1,5 +1,7 @@
 package kathy.nick.mike.cohinza;
 
+import android.graphics.Bitmap;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -8,15 +10,55 @@ import java.util.ArrayList;
  */
 
 public class RecipeDetail {
+    public String getTitle() {
+        return mTitle;
+    }
+
+    public void setTitle(String title) {
+        mTitle = title;
+    }
+
+    public Bitmap getImage() {
+        return mImage;
+    }
+
+    public void setImage(Bitmap image) {
+        mImage = image;
+    }
+
+    public String getRecipeId() {
+        return mRecipeId;
+    }
+
+    public void setRecipeId(String recipeId) {
+        mRecipeId = recipeId;
+    }
+
+    public String getSocialRank() {
+        return mSocialRank;
+    }
+
+    public void setSocialRank(String socialRank) {
+        mSocialRank = socialRank;
+    }
+
+    public ArrayList getIngredients() {
+        return mIngredients;
+    }
+
+    public void setIngredients(ArrayList ingredients) {
+        mIngredients = ingredients;
+    }
+
     private String mTitle;
-    private String mImageUrl;
-    private int mRecipeId;
-    private int mSocialRank;
+    private Bitmap mImage;
+    private String mRecipeId;
+    private String mSocialRank;
     private ArrayList mIngredients;
 
-    public RecipeDetail(String title, String imageUrl, int socialRank, int recipeId, ArrayList ingredients) {
+    public RecipeDetail(String title, Bitmap image, String socialRank, String recipeId, ArrayList ingredients) {
         mTitle = title;
-        mImageUrl = imageUrl;
+        mImage = image;
         mRecipeId = recipeId;
         mSocialRank = socialRank;
         mIngredients = ingredients;

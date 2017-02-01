@@ -1,4 +1,6 @@
 package kathy.nick.mike.cohinza;
+import android.graphics.Bitmap;
+
 import java.util.Queue;
 
 /**
@@ -7,8 +9,16 @@ import java.util.Queue;
 
 public class RecipeListItem {
     private String mTitle;
-    private String mImageUrl;
-    private int mRecipeId;
+    private Bitmap mImage;
+    private String mRecipeId;
+
+    public Bitmap getImage() {
+        return mImage;
+    }
+
+    public void setImage(Bitmap image) {
+        mImage = image;
+    }
 
     public String getTitle() {
         return mTitle;
@@ -18,25 +28,17 @@ public class RecipeListItem {
         mTitle = title;
     }
 
-    public String getImageUrl() {
-        return mImageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        mImageUrl = imageUrl;
-    }
-
-    public int getRecipeId() {
+    public String getRecipeId() {
         return mRecipeId;
     }
 
-    public void setRecipeId(int recipeId) {
+    public void setRecipeId(String recipeId) {
         mRecipeId = recipeId;
     }
 
-    public RecipeListItem(int recipeId, String title, String imageUrl) {
+    public RecipeListItem(String recipeId, String title, Bitmap image) {
         mTitle = title;
-        mImageUrl = imageUrl;
+        mImage = image;
         mRecipeId = recipeId;
     }
 

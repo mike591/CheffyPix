@@ -1,5 +1,7 @@
 package kathy.nick.mike.cohinza;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.util.Log;
 
@@ -63,6 +65,21 @@ public class ApiUtils {
             return stuff;
         } finally {
             urlConnection.disconnect();
+        }
+    }
+
+    public static Bitmap getBitmapFromURL(String src) {
+        try {
+            URL url = new URL(src);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setDoInput(true);
+            connection.connect();
+            InputStream input = connection.getInputStream();
+            Bitmap myBitmap = BitmapFactory.decodeStream(input);
+            return myBitmap;
+        } catch (IOException e) {
+            Log.e(TAG, "getBitmapFromURL: ", e );
+            return null;
         }
     }
 

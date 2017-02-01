@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -36,7 +37,6 @@ public class RecipeListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_list);
-
         Intent intent = getIntent();
         query = intent.getStringExtra(MainActivity.QUERY_KEY);
 
@@ -106,6 +106,13 @@ public class RecipeListActivity extends AppCompatActivity {
     } // END OF ADAPTER
 
     private class MakeInternetCallTask extends AsyncTask<Void,Void,Void> {
+        private ProgressBar mSpinner;
+
+        @Override
+        protected void onPreExecute() {
+            mSpinner = (ProgressBar) findViewById(R.id.progress_bar);
+        }
+
         @Override
         protected Void doInBackground(Void... params) {
             try {
@@ -136,6 +143,8 @@ public class RecipeListActivity extends AppCompatActivity {
             ListView mRecipeListView = (ListView) findViewById(R.id.activity_recipe_list);
             RecipeListAdapter adapter = new RecipeListAdapter(RecipeListActivity.this, mRecipeListItems);
             mRecipeListView.setAdapter(adapter);
+            mSpinner.setVisibility(View.GONE);
         }
+
     } // END OF MakeInternetCallTask
 }

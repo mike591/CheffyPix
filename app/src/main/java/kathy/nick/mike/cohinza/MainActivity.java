@@ -3,6 +3,7 @@ package kathy.nick.mike.cohinza;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,12 +11,11 @@ import android.view.inputmethod.InputMethod;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
-
 
     private Button mButton;
     public static final String QUERY_KEY = "QUERY_KEY";
@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
 
     }
     public static void closeKeyboard(Activity MainActivity) {

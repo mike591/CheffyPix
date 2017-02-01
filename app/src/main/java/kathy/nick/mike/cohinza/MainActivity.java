@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethod;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -33,6 +35,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        EditText mEditText = (EditText) findViewById(R.id.home_page_search);
+        mEditText.setImeActionLabel("Search", KeyEvent.KEYCODE_ENTER);
+        mEditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    Intent intent = new Intent(MainActivity.this, RecipeListActivity.class);
+                    EditText mEditText = (EditText) findViewById(R.id.home_page_search);
+                    String message = mEditText.getText().toString();
+                    intent.putExtra(QUERY_KEY, message);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
+
         mButton = (Button) findViewById(R.id.home_page_search_button);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
+
+
     public static void closeKeyboard(Activity MainActivity) {
         InputMethodManager manageInput = (InputMethodManager)
                 MainActivity.getSystemService(Activity.INPUT_METHOD_SERVICE);

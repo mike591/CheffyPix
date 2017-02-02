@@ -13,12 +13,28 @@
     android:layout_gravity="center"
     android:orientation="vertical"
     >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/custom_image"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal" />
+        <ImageView
+            android:id="@+id/recipe_image"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Custom Photo"
+            android:id="@+id/camera_button"/>
+    </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/recipe_image"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_gravity="center_horizontal"/>
+
+
 
     <ListView
         android:id="@+id/recipe_ingredient_list"
@@ -29,5 +45,4 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
-
 </LinearLayout>

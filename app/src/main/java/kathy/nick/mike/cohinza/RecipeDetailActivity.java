@@ -65,12 +65,9 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         byte[] byteArray = intent.getByteArrayExtra(RecipeListActivity.RECIPE_IMAGE);
         recipeImage = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-
         recipeTitle = intent.getStringExtra(RecipeListActivity.RECIPE_TITLE);
-
         mImageView = (ImageView) findViewById(R.id.recipe_image);
         mImageView.setImageBitmap(recipeImage);
-
         mTitleView = (TextView) findViewById(R.id.recipe_title);
         mTitleView.setText(recipeTitle);
 
@@ -87,7 +84,6 @@ public class RecipeDetailActivity extends AppCompatActivity {
                 JSONObject recipeDetailJsonObject = new JSONObject(recipeJsonObject.getString("recipe"));
                 linkText = recipeDetailJsonObject.getString("source_url");
                 JSONArray ingredientJsonArray = recipeDetailJsonObject.getJSONArray("ingredients");
-
 
                 if (ingredientJsonArray != null) {
                     int len = ingredientJsonArray.length();
@@ -106,13 +102,13 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void aVoid) {
-            ListView mIngredientListView = (ListView) findViewById(R.id.recipe_ingredient_list);
+            NonScrollListView mIngredientListView = (NonScrollListView) findViewById(R.id.recipe_ingredient_list);
             ArrayAdapter<String> mIngredientListAdapter = new ArrayAdapter<String>(RecipeDetailActivity.this, R.layout.activity_recipe_detail_ingredient, mIngredientsList);
             mIngredientListView.setAdapter(mIngredientListAdapter);
             TextView mLinkView = (TextView) findViewById(R.id.recipe_url);
             mLinkView.setText(linkText);
             mLinkView.setMovementMethod(LinkMovementMethod.getInstance());
-
+/*
             mIngredientListView.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
@@ -121,8 +117,9 @@ public class RecipeDetailActivity extends AppCompatActivity {
                     return false;
                 }
             });
+*/
+            //setListViewHeightBasedOnChildren(mIngredientListView);
 
-            setListViewHeightBasedOnChildren(mIngredientListView);
         }
     }
 };

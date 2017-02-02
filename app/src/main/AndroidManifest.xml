@@ -19,7 +19,8 @@
         </activity>
         <activity android:name=".RecipeListActivity">
         </activity>
-        <activity android:name=".RecipeDetailActivity">
+        <activity android:name=".RecipeDetailActivity"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

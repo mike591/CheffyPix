@@ -29,6 +29,7 @@ import java.util.List;
 public class RecipeListActivity extends AppCompatActivity {
     public static final String RECIPE_ID_KEY = "RECIPE_ID_KEY";
     public static final String RECIPE_IMAGE = "RECIPE_IMAGE";
+    public static final String RECIPE_TITLE = "RECIPE_TITLE";
     private static final String TAG = "RecipeListActivity";
     private ArrayList<RecipeListItem> mRecipeListItems = new ArrayList<>();
     private String query;
@@ -94,6 +95,7 @@ public class RecipeListActivity extends AppCompatActivity {
 
                     intent.putExtra(RECIPE_ID_KEY, item.getRecipeId());
                     intent.putExtra(RECIPE_IMAGE, byteArray);
+                    intent.putExtra(RECIPE_TITLE, item.getTitle());
 
 
 

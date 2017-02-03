@@ -196,7 +196,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
             TextView mLinkView = (TextView) findViewById(R.id.recipe_url);
             mLinkView.setClickable(true);
             mLinkView.setMovementMethod(LinkMovementMethod.getInstance());
-            String htmlText = "<a href='" + linkText + "'>" + "Find Recipe Directions" + "</a>";
+            String htmlText = "<a href='" + linkText + "'>" + "View Recipe Directions" + "</a>";
             mLinkView.setText(Html.fromHtml(htmlText));
 
         }

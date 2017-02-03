@@ -2,4 +2,5 @@
     <string name="app_name">Cohinza</string>
     <string name="search_hint">Type a recipe to search!</string>
     <string name="search_button">Search</string>
+    <string name="share_button">Share Your Creation!</string>
     </resources>

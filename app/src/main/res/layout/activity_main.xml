@@ -29,7 +29,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/search_button"
-        android:background="@color/purple"
+        android:textColor="@color/white"
+        android:background="@drawable/home_button"
         android:layout_gravity="center_horizontal"
         android:layout_centerHorizontal="true"/>
 

@@ -32,12 +32,21 @@
         android:layout_margin="10dp"
         />
 
-
-    <ImageView
-        android:id="@+id/recipe_image"
-        android:layout_width="300dp"
-        android:layout_height="257dp"
-        android:layout_gravity="center_horizontal"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/recipe_image"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal" />
+        <Button
+            android:layout_alignParentTop="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Custom Photo"
+            android:id="@+id/camera_button"/>
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/recipe_url"

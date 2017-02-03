@@ -4,15 +4,18 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
+import android.view.View;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -31,6 +34,8 @@ public class RecipeDetailActivity extends AppCompatActivity {
     private Bitmap recipeImage;
     private String recipeTitle;
     private ImageView mImageView;
+    private Button mCameraButton;
+    private int REQUEST_IMAGE_CAPTURE;
     private TextView mTitleView;
     private String linkText;
     private ArrayList<String> mIngredientsList;
@@ -72,6 +77,27 @@ public class RecipeDetailActivity extends AppCompatActivity {
         mTitleView.setText(recipeTitle);
 
         new MakeIngredientsAPICallTask().execute();
+
+        mCameraButton = (Button) findViewById(R.id.camera_button);
+        mCameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                REQUEST_IMAGE_CAPTURE = 0;
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                }
+            }
+        });
+
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            mImageView.setImageBitmap(imageBitmap);
+        }
     }
 
 

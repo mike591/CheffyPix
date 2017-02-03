@@ -26,7 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RecipeListActivity" />
+        <activity android:name=".RecipeListActivity"
+                  android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>

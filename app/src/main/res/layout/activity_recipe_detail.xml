@@ -44,7 +44,7 @@
             android:layout_alignParentTop="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Custom Photo"
+            android:text="@string/share_button"
             android:id="@+id/camera_button"/>
     </RelativeLayout>
 
@@ -54,7 +54,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:linksClickable="true"
-        android:autoLink="web"
         android:layout_margin="10dp"
         />
 

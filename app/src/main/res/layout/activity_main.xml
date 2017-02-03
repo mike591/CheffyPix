@@ -29,7 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/ic_cheffy_black"
-        android:tint="@color/white"/>
+        android:tint="@color/white"
+        android:padding="30dp"/>
 
     <Button
         android:id="@+id/home_page_search_button"
@@ -40,6 +41,7 @@
         android:textColor="@color/white"
         android:background="@drawable/home_button"
         android:layout_gravity="center_horizontal"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"/>
 
 </RelativeLayout>

@@ -15,6 +15,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -167,8 +168,10 @@ public class RecipeDetailActivity extends AppCompatActivity {
             ArrayAdapter<String> mIngredientListAdapter = new ArrayAdapter<String>(RecipeDetailActivity.this, R.layout.activity_recipe_detail_ingredient, mIngredientsList);
             mIngredientListView.setAdapter(mIngredientListAdapter);
             TextView mLinkView = (TextView) findViewById(R.id.recipe_url);
-            mLinkView.setText(linkText);
+            mLinkView.setClickable(true);
             mLinkView.setMovementMethod(LinkMovementMethod.getInstance());
+            String htmlText = "<a href='" + linkText + "'>" + "View Recipe Directions" + "</a>";
+            mLinkView.setText(Html.fromHtml(htmlText));
 
         }
     }

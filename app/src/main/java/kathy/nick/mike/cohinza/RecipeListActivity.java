@@ -33,6 +33,8 @@ public class RecipeListActivity extends AppCompatActivity {
     private static final String TAG = "RecipeListActivity";
     private ArrayList<RecipeListItem> mRecipeListItems = new ArrayList<>();
     private String query;
+    private ImageView mSadImageView;
+    private TextView mSadTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,9 @@ public class RecipeListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe_list);
         Intent intent = getIntent();
         query = intent.getStringExtra(MainActivity.QUERY_KEY);
+
+        mSadImageView = (ImageView) findViewById(R.id.not_found_image);
+        mSadTextView = (TextView) findViewById(R.id.not_found_text);
 
         new MakeInternetCallTask().execute();
 
@@ -143,8 +148,14 @@ public class RecipeListActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             ListView mRecipeListView = (ListView) findViewById(R.id.activity_recipe_list);
-            RecipeListAdapter adapter = new RecipeListAdapter(RecipeListActivity.this, mRecipeListItems);
-            mRecipeListView.setAdapter(adapter);
+            if (mRecipeListItems.size() == 0) {
+                mSadImageView.setImageResource(R.drawable.ic_cheffy_black_sad);
+                mSadTextView.setText("No recipes found!");
+
+            } else {
+                RecipeListAdapter adapter = new RecipeListAdapter(RecipeListActivity.this, mRecipeListItems);
+                mRecipeListView.setAdapter(adapter);
+            }
             mSpinner.setVisibility(View.GONE);
         }
 

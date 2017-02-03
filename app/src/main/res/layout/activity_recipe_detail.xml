@@ -27,25 +27,30 @@
     <TextView
         android:id="@+id/recipe_title"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
+        android:textSize="25dp"
         />
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/recipe_image"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
             android:layout_gravity="center_horizontal" />
         <Button
-            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/share_button"
-            android:id="@+id/camera_button"/>
+            android:id="@+id/camera_button"
+            android:backgroundTint="@color/purple"
+            android:textColor="@color/white"/>
     </RelativeLayout>
 
     <TextView

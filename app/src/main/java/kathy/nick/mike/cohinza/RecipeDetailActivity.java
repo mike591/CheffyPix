@@ -197,8 +197,11 @@ public class RecipeDetailActivity extends AppCompatActivity {
             mLinkView.setClickable(true);
             mLinkView.setMovementMethod(LinkMovementMethod.getInstance());
             String htmlText = "<a href='" + linkText + "'>" + "View Recipe Directions" + "</a>";
-            mLinkView.setText(Html.fromHtml(htmlText));
-
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                mLinkView.setText(Html.fromHtml(htmlText, Html.FROM_HTML_MODE_LEGACY)); 
+            } else {
+                mLinkView.setText(Html.fromHtml(htmlText));
+            }
         }
     }
 };

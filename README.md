@@ -21,7 +21,17 @@ See our demo page [here](link) for an in-depth view of our features.
 
 ### Screenshots
 
-TODO: homepage with search view, list view, lack of response view, ingredients, redirect, share custom picture, texting with response
+Search from the homepage:
+![Homepage](docs/images/homepage.png)
+
+See results with images list:
+![List Results](docs/images/list_view.png)
+
+...or don't:
+![No Results](docs/images/no_results.png)
+
+Click on an item to see the recipe:
+![Recipe Details](docs/images/detail_view.png)
 
 ## Install
 
@@ -33,7 +43,7 @@ This project was implemented in Java using Android Studio. The application uses 
 
 ### Android App Architecture
 CheffyPix was created in Android Studio and is a native Android application. 
-It is written in Java, compiled with Android SDK tools 25.2.5 and intended for Android Nougat and above.
+It is written in Java, compiled with Android SDK tools and intended for Android Nougat and above.
 Our app runs, as is default, its own virtual machine with its own Linux process. In addition, it will request Camera and Device Storage permission.
 
 As such, it interacts with multiple Managers in the Android application framework:

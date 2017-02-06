@@ -60,9 +60,7 @@ In addition, we have resources and classes for display design:
 
 ### Food2Fork API
 
-Sample api call response
-
-parsers implemented
+Our application makes use of the [Food2Fork API](http://food2fork.com/about/api).
 
 ### Implementation Details
 

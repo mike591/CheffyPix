@@ -4,11 +4,11 @@
 
 ### Background
 
-CheffyPix is a native mobile app for Android, whose purpose is to connect foodies together and celebrate cooking. Users can search recipes for their favorite foods, take pictures of their completed recipes, and share pictures and recipes with others.
+[CheffyPix](https://play.google.com/store/apps/details?id=kathy.nick.mike.cohinza&hl=en) is a native mobile app for Android, whose purpose is to connect foodies together and celebrate cooking. Users can search recipes for their favorite foods, take pictures of their completed recipes, and share pictures and recipes with others.
 
 ### Demo
 
-See our demo page [here](link) for an in-depth view of our features.
+See our demo page [here](https://nvizzutti.github.io/CheffyPix-Demo/#into) for an in-depth view of our features.
 
 ### Features List
 
@@ -35,7 +35,7 @@ Click on an item to see the recipe:
 
 ## Install
 
-Find us on Google Play! CheffyPix is a free android app and can be found [here](add link).
+Find us on Google Play! CheffyPix is a free android app and can be found [here](https://play.google.com/store/apps/details?id=kathy.nick.mike.cohinza&hl=en).
 
 ## Architecture and Technologies
 

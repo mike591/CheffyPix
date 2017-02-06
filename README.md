@@ -182,7 +182,7 @@ The code below shows the use of an adapter to correctly display each list item a
 ```
 
 ## Logo Design
-Our project name was created by Michael Mach. Our logo was designed and drawn by Nicholas Vizzutti. Variations based on the the original design were created by Kathy Luo.
+Our project name was created by Michael Mach. Our logo was designed and drawn by Nicholas Vizzutti. Variations based on the original design were created by Kathy Luo.
 
 ##Team Members
 

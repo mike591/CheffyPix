@@ -36,22 +36,22 @@ CheffyPix was created in Android Studio and is a native Android application.
 It is written in Java, compiled with Android SDK tools 25.2.5 and intended for Android Nougat and above.
 Our app runs, as is default, its own virtual machine with its own Linux process. In addition, it will request Camera and Device Storage permission.
 
-As such it interacts with multiple Managers in the Android application framework:
+As such, it interacts with multiple Managers in the Android application framework:
 - For the rendering of our views: interacts with Window Manager and View System and Resource Manager
 - For the core logic of our views: Activity Manager
 - For interactions with device storage to save images: Package Manager
 - And others for core functionality
 
-Our code implements MVC ideals through the use of Activities, Layouts, and Recipe Classes. Our views are largely created in our layouts, which are xml files containing references to resources and classes that have to do with the user interface. These are then inflated by our Activities, which control events and user inputs, and handle framework-imposed events. Our information is encapsulated by our Recipe classes which model and define what we will be rendering on our views.
+Our code implements MVC ideals through the use of Activities, Layouts, and Recipe Classes. Our views are largely created in our layouts, which are xml files containing references to resources and classes related to the user interface. These are then inflated by our Activities, which control events and user inputs, and handle framework-imposed events. Our information is encapsulated by our Recipe classes, which model and define what we will be rendering on our views.
 
 Our list of Activities (each handling distinct screens for user interaction) include:
-- A homepage with logo and search bar, as MainActivity
-- A recipe list view of results, as RecipeListActivity
-- A recipe detail view, as RecipeDetailActivity
+- A homepage with logo and search bar, as  `MainActivity`
+- A recipe list view of results, as `RecipeListActivity`
+- A recipe detail view, as `RecipeDetailActivity`
 
 As well we have classes for:
-- Recipe results for our lists view, as RecipeListItem
-- Recipe details for our detailed recipe view, as RecipeDetail
+- Recipe results for our lists view, as `RecipeListItem`
+- Recipe details for our detailed recipe view, as `RecipeDetail`
 
 In addition, we have resources and classes for display design:
 - Layouts for each Activity to define the visual structure of the UI
@@ -68,12 +68,12 @@ parsers implemented
 
 The application code includes inplementations of:
 
-- Asynchronous tasks, implemented by subclassing built-in AsyncTask to reduce the need for manipulating threads or handlers
-- API request interaction by building an URI reference with the query and API key appended, and opening the connection using HttpURLConnection methods
-- API response interaction by reading the the stream and parsing the JSON response with JSONObject methods and related functionality
+- Asynchronous tasks, implemented by subclassing built-in `AsyncTask` to reduce the need for manipulating threads or handlers
+- API request interaction by building an URI reference with the query and API key appended, and opening the connection using `HttpURLConnection` methods
+- API response interaction by reading the the stream and parsing the JSON response with `JSONObject` methods and related functionality
 - JSON to Bitmap parser to display images retreived from the API
 - Recipe classes to properly encapsulate the recipe information retreived
-- Nested views, implemented with ListViews and appropriate adapters to populate the list item
+- Nested views, implemented with `ListView`s and appropriate adapters to populate the list item
 
 As well the application uses many design customizations, including:
 - Custom View class for lists
@@ -82,16 +82,109 @@ As well the application uses many design customizations, including:
 
 ### Sample Code
 
-In the sample code below, we show an example of asynchornous tasks and encapsulation with classes. AN API call runs in the background, and on completion, the information is retrieved through class methods and mounted to the various views:
+In the code below, we show an example of asynchornous tasks and encapsulation with classes. AN API call runs in the background, and on completion, the information is retrieved through class methods and mounted to the various views. An adapter is used to inflate the list item view into the recipe list view.
 
-TODO put code example of RecipeListView
+```java
+private class MakeInternetCallTask extends AsyncTask<Void,Void,Void> {
+        private ProgressBar mSpinner;
 
-The code below shows the use of an adaptor to correctly display the list item as designed in the ListItem xml.
+        @Override
+        protected void onPreExecute() {
+            mSpinner = (ProgressBar) findViewById(R.id.progress_bar);
+        }
 
-TODO put code example from adapter
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                String recipesString = new ApiUtils().RecipesSearchQuery(query);
+                try {
+                    JSONObject recipeJsonObject = new JSONObject(recipesString);
+                    JSONArray recipeJsonArray = recipeJsonObject.getJSONArray("recipes");
+                    for (int i = 0; i < recipeJsonArray.length(); i++) {
+                        String recipeId = recipeJsonArray.getJSONObject(i).getString("recipe_id");
+                        String recipeTitle = recipeJsonArray.getJSONObject(i).getString("title");
+                        String recipeImageUrl = recipeJsonArray.getJSONObject(i).getString("image_url");
+                        Bitmap recipeImage = ApiUtils.getBitmapFromURL(recipeImageUrl);
+                        RecipeListItem item = new RecipeListItem(recipeId, recipeTitle, recipeImage);
+                        mRecipeListItems.add(item);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            ListView mRecipeListView = (ListView) findViewById(R.id.activity_recipe_list);
+            if (mRecipeListItems.size() == 0) {
+                mSadImageView.setImageResource(R.drawable.ic_cheffy_black_sad);
+                mSadTextView.setText("No recipes found!");
+
+            } else {
+                RecipeListAdapter adapter = new RecipeListAdapter(RecipeListActivity.this, mRecipeListItems);
+                mRecipeListView.setAdapter(adapter);
+            }
+            mSpinner.setVisibility(View.GONE);
+        }
+}
+```
+This async task class shown above is used in `RecipeListView`. It will show a spinner as it runs, call the API in `doInBackground`, create a `RecipeItem` with the  information from the API, and `onPostExecute` it will then stop the spinner and call an adapter to mount the information to a `ListView`.
+
+The code below shows the use of an adapter to correctly display each list item as designed in the `ListItem` layout file and attach necessary listeners. On click or tap, the activity will fire off new `Intent`s with title and image information passed along to the new view.
+
+```java
+    private class RecipeListAdapter extends BaseAdapter {
+
+        private Context mContext;
+        private ArrayList mDataSource;
+        private LayoutInflater mInflater;
+
+        public RecipeListAdapter(Context context, ArrayList items) {
+            mContext = context;
+            mDataSource = items;
+            mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View rowView = mInflater.inflate(R.layout.activity_recipe_list_item, parent, false);
+            final RecipeListItem item = (RecipeListItem) mDataSource.get(position);
+
+            ImageView mImageView = (ImageView) rowView.findViewById(R.id.recipe_list_image);
+            mImageView.setImageBitmap(item.getImage());
+
+            TextView mTextView = (TextView) rowView.findViewById(R.id.recipe_list_title);
+            mTextView.setText(item.getTitle());
+
+            rowView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(RecipeListActivity.this, RecipeDetailActivity.class);
+
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    item.getImage().compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byte[] byteArray = stream.toByteArray();
+
+                    intent.putExtra(RECIPE_ID_KEY, item.getRecipeId());
+                    intent.putExtra(RECIPE_IMAGE, byteArray);
+                    intent.putExtra(RECIPE_TITLE, item.getTitle());
+
+                    startActivity(intent);
+                }
+            });
+
+            return rowView;
+        }
+    }
+```
 
 ## Logo Design
-Our project name was thought up by Michael Mach. Our logo was designed and drawn by Nicholas Vizzutti. Variations based on the the original design were created by Kathy Luo.
+Our project name was created by Michael Mach. Our logo was designed and drawn by Nicholas Vizzutti. Variations based on the the original design were created by Kathy Luo.
 
 ##Team Members
 

@@ -1,24 +1,5 @@
 <img src='docs/images/cheffy_black_whitespace.png' id='header'>
 
-<style>
-img {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px;
-  width: 50%
-}
-#header {
-  width: 100%;
-
-}
-#images {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-</style>
-
 ## CheffyPix
 
 ### Background

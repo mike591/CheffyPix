@@ -1,4 +1,23 @@
-![logo](docs/images/cheffy_black_whitespace.png)
+<img src='docs/images/cheffy_black_whitespace.png' id='header'>
+
+<style>
+img {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  width: 50%
+}
+#header {
+  width: 100%;
+
+}
+#images {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+</style>
 
 ## CheffyPix
 
@@ -22,16 +41,22 @@ See our demo page [here](https://nvizzutti.github.io/CheffyPix-Demo/#into) for a
 ### Screenshots
 
 Search from the homepage:
+
 ![Homepage](docs/images/homepage.png)
 
 See results with images list:
+
 ![List Results](docs/images/list_view.png)
 
 ...or don't:
+
 ![No Results](docs/images/no_results.png)
 
 Click on an item to see the recipe:
-![Recipe Details](docs/images/detail_view.png)
+<div id='images'>
+<img src='docs/images/detail_view.png' width='45%' height='45%'>
+<img src='docs/images/chocolate.png' width='45%' height='45%'>
+</div>
 
 ## Install
 

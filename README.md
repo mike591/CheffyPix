@@ -42,7 +42,7 @@ Find us on Google Play! CheffyPix is a free android app and can be found [here](
 This project was implemented in Java using Android Studio. The application uses the Food2Fork API for recipe information and details.
 
 ### Android App Architecture
-CheffyPix was created in Android Studio and is a native Android application. 
+CheffyPix was created in Android Studio and is a native Android application.
 It is written in Java, compiled with Android SDK tools and intended for Android Nougat and above.
 Our app runs, as is default, its own virtual machine with its own Linux process. In addition, it will request Camera and Device Storage permission.
 
@@ -192,7 +192,7 @@ The code below shows the use of an adapter to correctly display each list item a
 ```
 
 ## Logo Design
-Our project name was created by Michael Mach. Our logo was designed and drawn by Nicholas Vizzutti. Variations based on the original design were created by Kathy Luo.
+Our project name was created by Michael Mach. Logo was created by Nicholas Vizzutti with credit to [LogoMakr](https://logomakr.com). Variations based on the original design were created by Kathy Luo.
 
 ##Team Members
 

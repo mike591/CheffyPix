@@ -84,7 +84,7 @@ The application code includes inplementations of:
 
 - Asynchronous tasks, implemented by subclassing built-in `AsyncTask` to reduce the need for manipulating threads or handlers
 - API request interaction by building an URI reference with the query and API key appended, and opening the connection using `HttpURLConnection` methods
-- API response interaction by reading the the stream and parsing the JSON response with `JSONObject` methods and related functionality
+- API response interaction by reading the stream and parsing the JSON response with `JSONObject` methods and related functionality
 - JSON to Bitmap parser to display images retreived from the API
 - Recipe classes to properly encapsulate the recipe information retreived
 - Nested views, implemented with `ListView`s and appropriate adapters to populate the list item
@@ -200,7 +200,7 @@ The code below shows the use of an adapter to correctly display each list item a
 ## Logo Design
 Our project name was created by Michael Mach. Logo was created by Nicholas Vizzutti with credit to [LogoMakr](https://logomakr.com). Variations based on the original design were created by Kathy Luo.
 
-##Team Members
+## Team Members
 
 Michael Mach | Nicholas Vizzutti | Kathy Luo
 ---|---|---
